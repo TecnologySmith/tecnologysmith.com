@@ -1,0 +1,211 @@
+body {
+            background-color: #07090e;
+            color: #f1f5f9;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-tech {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Glassmorphism Styles */
+        .glass-panel {
+            background: rgba(18, 23, 34, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(22, 28, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 12px 30px -10px rgba(0, 242, 254, 0.2);
+        }
+
+        /* Glowing Gradients */
+        .text-gradient {
+            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #7928ca 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-gradient {
+            background: linear-gradient(135deg, #00f2fe 0%, #0072ff 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-gradient:hover {
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.6);
+            transform: scale(1.02);
+        }
+
+        .btn-purple {
+            background: linear-gradient(135deg, #7928ca 0%, #b800ff 100%);
+        }
+
+        .btn-purple:hover {
+            box-shadow: 0 0 25px rgba(184, 0, 255, 0.6);
+            transform: scale(1.02);
+        }
+
+        /* Pulse Animation for Live Status */
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.05); }
+        }
+
+        .pulse-active {
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
+
+        .hero-highlight {
+            min-width: 0;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 1rem;
+            background: rgba(18, 23, 34, 0.55);
+            text-align: left;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #07090e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f2fe;
+        }
+
+        @media (max-width: 640px) {
+            html,
+            body {
+                overflow-x: clip;
+            }
+
+            header > div:first-child {
+                gap: 0.5rem;
+            }
+
+            header a.group {
+                min-width: 0;
+                gap: 0.5rem;
+            }
+
+            header a.group > div:first-child {
+                width: 2.5rem;
+                height: 2.5rem;
+                flex: 0 0 2.5rem;
+            }
+
+            header a.group .font-tech {
+                font-size: clamp(0.8rem, 4vw, 1.125rem);
+                letter-spacing: 0.03em;
+                white-space: nowrap;
+            }
+
+            #inicio {
+                padding-top: 7rem;
+                padding-bottom: 4rem;
+            }
+
+            #inicio > .max-w-7xl > .grid {
+                gap: 2.5rem;
+            }
+
+            #inicio .inline-flex {
+                max-width: 100%;
+                justify-content: center;
+                white-space: normal;
+            }
+
+            #inicio h1 {
+                font-size: clamp(2rem, 9vw, 3rem);
+                overflow-wrap: anywhere;
+            }
+
+            .hero-highlights > h2 {
+                text-align: center;
+            }
+
+            .hero-highlights > .grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .hero-highlight:last-child {
+                grid-column: 1 / -1;
+            }
+
+            #inicio .lg\:col-span-5 {
+                min-width: 0;
+                width: 100%;
+            }
+
+            #inicio .lg\:col-span-5 > .relative {
+                width: 100%;
+                max-width: 28rem;
+                min-width: 0;
+            }
+
+            #inicio .lg\:col-span-5 .glass-card {
+                padding: 1.25rem;
+            }
+
+            #inicio .lg\:col-span-5 h3 {
+                font-size: clamp(1rem, 5vw, 1.5rem);
+                letter-spacing: 0.02em;
+                overflow-wrap: anywhere;
+            }
+
+            #inicio .lg\:col-span-5 .mt-6 {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            footer {
+                overflow-wrap: anywhere;
+            }
+
+            footer .grid {
+                gap: 2rem;
+            }
+
+            body > a[aria-label="Contactar por WhatsApp"] {
+                right: 1rem;
+                bottom: 1rem;
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero-highlights > .grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .hero-highlight:last-child {
+                grid-column: auto;
+            }
+
+            #inicio .relative.w-40 {
+                width: 8rem;
+                height: 8rem;
+            }
+
+            #inicio .lg\:col-span-5 .glass-card {
+                padding: 1rem;
+            }
+        }
