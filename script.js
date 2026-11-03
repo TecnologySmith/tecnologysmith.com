@@ -90,3 +90,33 @@ window.addEventListener('click', (event) => {
         }
     });
 });
+
+function initializeVisitorCounter() {
+    const countDisplay = document.getElementById('visitor-count');
+    if (!countDisplay) {
+        return;
+    }
+
+    if (typeof window.Counter !== 'function') {
+        console.error('CounterAPI library could not be loaded.');
+        countDisplay.textContent = 'No disponible';
+        return;
+    }
+
+    const counter = new window.Counter({ workspace: 'tecnology-smiths-team-6118' });
+    counter.up('first-counter-6118')
+        .then((result) => {
+            const visitCount = result?.data?.up_count;
+            if (!Number.isSafeInteger(visitCount) || visitCount < 0) {
+                throw new Error('CounterAPI returned an invalid visit count.');
+            }
+
+            countDisplay.textContent = visitCount.toLocaleString('es-CO');
+        })
+        .catch((error) => {
+            console.error('Could not register the page visit with CounterAPI:', error);
+            countDisplay.textContent = 'No disponible';
+        });
+}
+
+document.addEventListener('DOMContentLoaded', initializeVisitorCounter);

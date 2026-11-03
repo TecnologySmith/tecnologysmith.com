@@ -50,6 +50,7 @@
 
     <!-- Tailwind CSS CDN -->
     <script src="script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- FontAwesome Icons CDN -->
@@ -777,6 +778,10 @@
             <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
                 <p>&copy; 2026 TecnologySmith.com - Todos los derechos reservados. Diseñado por Ing. Smith Hernández.</p>
                 <div class="flex items-center space-x-4">
+                    <p class="inline-flex items-center gap-2 text-slate-400" aria-live="polite">
+                        <i class="fa-solid fa-eye text-cyan-400" aria-hidden="true"></i>
+                        Visitas: <span id="visitor-count" class="font-semibold text-cyan-400">Cargando...</span>
+                    </p>
                     <a href="https://www.facebook.com/tecnology.smith" target="_blank" class="hover:text-cyan-400"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://www.instagram.com/tecnologysmithh/" target="_blank" class="hover:text-cyan-400"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.tiktok.com/@tecnologysmith" target="_blank" class="hover:text-cyan-400"><i class="fa-brands fa-tiktok"></i></a>
@@ -832,6 +837,7 @@
                     <li>Mantener comunicación directa por intermedio del canal oficial de WhatsApp.</li>
                 </ul>
                 <p><strong>Derechos del Titular (ARCO):</strong> El usuario tiene derecho a conocer, actualizar, rectificar y solicitar la supresión de sus datos personales enviando un mensaje directo al WhatsApp oficial del Ing. Smith Hernández.</p>
+                <p><strong>Contador de visitas:</strong> Este sitio utiliza CounterAPI para mostrar el total de visitas. Al cargar la página, el navegador se conecta con ese servicio externo para registrar una visita y transmitir los datos técnicos necesarios para la conexión.</p>
             </div>
             <div class="mt-6 text-right">
                 <button onclick="closeModal('privacyModal')" class="btn-gradient px-6 py-2 text-slate-950 font-bold rounded-xl text-xs">Entendido y Cerrar</button>
