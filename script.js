@@ -106,7 +106,7 @@ function initializeVisitorCounter() {
     const counter = new window.Counter({ workspace: 'tecnology-smiths-team-6118' });
     counter.up('first-counter-6118')
         .then((result) => {
-            const visitCount = result?.data?.up_count;
+            const visitCount = result?.value ?? result?.data?.up_count;
             if (!Number.isSafeInteger(visitCount) || visitCount < 0) {
                 throw new Error('CounterAPI returned an invalid visit count.');
             }
